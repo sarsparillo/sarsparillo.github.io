@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html ng-app="kylePortfolio">
+
+<!-- website designed and authored by Tom Whalley -->
+
+<head>
+
+	<meta charset="utf-8">
+
+	<meta name="author" content="Tom Whalley">
+	<meta name="description" content="Artistic, design, and musical portfolio of Kyle Bancroft">
+	<link rel="shortcut icon" href="images/favicon.ico">
+
+
+	<link href='http://fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'>	
+
+	<link rel="stylesheet" href="css/normalize.css" />
+	<link rel="stylesheet" href="css/style.css" />
+	<link rel="stylesheet" href="css/colorbox.css" />
+
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/sticky-kit.min.js"></script>
+	<script src="js/jquery.colorbox-min.js"></script>
+	<script src="js/scroll.js"></script> <!-- jQuery/DOM -->
+
+	<script src="js/angular.min.js"></script>	
+	<script src="js/controllers.js"></script> <!-- angular/content -->
+
+
+	<title>kyle bancroft || portfolio</title>
+	
+</head>
+
+
+
+<body>
+	
+	<section class="container clearfix" id="splash"></section>
+	<header>
+		<div id="menu">
+				<img src="./images/logo.gif" id="logo" alt="logo" class="heads big"/>
+				<a href="#" id="header_click" data-action="to_top"><h1 class="heads big" >portfolio of expressions by kyle bancroft</h1></a>
+		</div> <!-- end menu -->
+	</header> <!-- end header and title -->
+	
+	<!-- content spacer -->
+	<div id="spacer" style="height: 100%; width: 100%; position: relative; top: 0;">
+	</div>
+	<!-- content spacer -->
+	
+	<section id="visual_splash" class="section_splash container">
+		<div class="wrapper">
+			<div class="splash_content">
+				<h2>visual imaginings</h2>
+
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer elementum, urna vehicula gravida feugiat, quam massa euismod tortor, vehicula volutpat ipsum ante vitae mauris. Fusce nec gravida sem. Phasellus non feugiat neque. Curabitur ut sagittis ligula. Maecenas feugiat sit amet quam eu suscipit. Aliquam in blandit enim. Morbi suscipit eu nisl vitae pharetra. Vivamus blandit, nisi vitae finibus pulvinar, dui libero congue libero, ut accumsan augue nibh facilisis metus. Etiam scelerisque magna eu feugiat pretium. Sed sodales libero diam, eu egestas urna tempor non. Pellentesque eu ultricies metus, vel aliquet est. Quisque diam nisi, molestie ac lorem quis, congue suscipit velit.</p>
+
+				<p>Curabitur ac sem a arcu fermentum suscipit. Nullam auctor aliquet accumsan. Donec id vehicula ipsum, at volutpat nisi. Curabitur accumsan lectus vel urna lobortis pharetra. Morbi at augue at elit hendrerit placerat in eget nisl. Nam finibus purus non velit interdum, sit amet volutpat turpis convallis. Sed sagittis metus sit amet dapibus dignissim. Vivamus ut leo sed mauris pretium lacinia cursus ut tortor. Sed fermentum urna dolor, ac placerat turpis lobortis sit amet.</p>
+
+			</div> <!-- end splash content -->
+		</div> <!-- end wrapper -->
+	</section> <!-- end visual splash -->
+
+
+	<section id="visual" class="content container clearfix">
+		<section class="section_header clearfix" id="visual_header">
+			<div class="wrapper">
+				<div class="socials clearfix">
+					<p>visual imaginings</p>
+					
+					<ul>
+						<li><a href="http://www.twitter.com"><img src="images/tw.png" id="twitter" alt="twitter" /></a></li>
+						<li><a href="http://www.instagram.com"><img src="images/ig.png" id="instagram" alt="instagram" /></a></li>
+					</ul>
+				</div> <!-- end socials -->
+			</div> <!-- end wrapper -->
+		</section> <!-- end visual header -->
+	
+		<div class="wrapper">
+			<section class="content_header" id="visual_tags">
+				<div class="column"><h3>design</h3></div>
+				<div class="column"><h3>art</h3></div>
+				<div class="column"><h3>architecture</h3></div>
+			</section>
+
+			<section class="main_content container">
+				<div class="column" ng-controller="visualdesign as design">
+					<div class="links"
+						ng-repeat="instance in design.instances"
+						style="background: url({{instance.imageUrl}}) no-repeat;'">
+						<a class="visual_gallery" ng-href="{{instance.pageUrl}}" >
+							<div class="link_spacer"></div>
+							<div class="link_overlay"> <p>{{instance.title}}</p> </div>
+						</a>
+					</div>
+				</div> <!-- end left design column -->
+
+				<div class="column" ng-controller="visualart as art">
+					<div class="links"  
+						ng-repeat="instance in art.instances"
+						style="background: url({{instance.imageUrl}}) no-repeat;'">
+						<a class="visual_gallery" ng-href="{{instance.pageUrl}}" >
+							<div class="link_spacer"></div>
+							<div class="link_overlay"> <p>{{instance.title}}</p> </div>
+						</a>
+					</div>
+				</div> <!-- end middle art column -->
+
+				<div class="column" ng-controller="visualarchitecture as architecture">
+					<div class="links"  
+						ng-repeat="instance in architecture.instances"
+						style="background: url({{instance.imageUrl}}) no-repeat;'">
+						<a class="visual_gallery" ng-href="{{instance.pageUrl}}" >
+							<div class="link_spacer"></div>
+							<div class="link_overlay"> <p>{{instance.title}}</p> </div>
+						</a>
+					</div>
+				</div> <!-- end right architecture column -->
+			</section> <!-- end content grid -->
+		</div> <!-- end wrapper -->
+	</section> <!-- end visual -->
+
+	
+	<section id="music_splash" class="section_splash container clearfix">
+		<div class="wrapper">
+			<div class="splash_content">
+				<h2>audible imaginings</h2>
+
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer elementum, urna vehicula gravida feugiat, quam massa euismod tortor, vehicula volutpat ipsum ante vitae mauris. Fusce nec gravida sem. Phasellus non feugiat neque. Curabitur ut sagittis ligula. Maecenas feugiat sit amet quam eu suscipit. Aliquam in blandit enim. Morbi suscipit eu nisl vitae pharetra. Vivamus blandit, nisi vitae finibus pulvinar, dui libero congue libero, ut accumsan augue nibh facilisis metus. Etiam scelerisque magna eu feugiat pretium. Sed sodales libero diam, eu egestas urna tempor non. Pellentesque eu ultricies metus, vel aliquet est. Quisque diam nisi, molestie ac lorem quis, congue suscipit velit.</p>
+
+				<p>Curabitur ac sem a arcu fermentum suscipit. Nullam auctor aliquet accumsan. Donec id vehicula ipsum, at volutpat nisi. Curabitur accumsan lectus vel urna lobortis pharetra. Morbi at augue at elit hendrerit placerat in eget nisl. Nam finibus purus non velit interdum, sit amet volutpat turpis convallis. Sed sagittis metus sit amet dapibus dignissim. Vivamus ut leo sed mauris pretium lacinia cursus ut tortor. Sed fermentum urna dolor, ac placerat turpis lobortis sit amet.</p>
+
+			</div> <!-- end splash content -->
+		</div> <!-- end wrapper -->
+	</section> <!-- end music splash -->
+
+
+	<section id="music" class="content container">
+		<section class="section_header" id="music_header">
+			<div class="wrapper">
+				<div class="socials clearfix">
+					<div class="active" id="music_words">
+						<p>audible imaginings</p>
+					</div>
+					<ul>
+						<li><a href="http://www.youtube.com"><img src="images/yt.png" id="youtube" alt="youtube" /></a></li>
+						<li><a href="http://www.soundcloud.com"><img src="images/sc.png" id="soundcloud" alt="soundcloud" /></a></li>
+						<li><a href="http://www.bandcamp.com"><img src="images/bc.png" id="bandcamp" alt="bandcamp" /></a></li>
+						<li><a href="http://www.twitter.com"><img src="images/tw.png" id="twitter" alt="twitter" /></a></li>
+					</ul>
+				</div> <!-- end socials -->
+			</div> <!-- end wrapper -->
+		</section> <!-- end music header -->
+		
+		<div class="wrapper">
+			<section class="content_header container" id="music_tags">
+				<div class="column"><h3>solo</h3></div>
+				<div class="column"><h3>videos</h3></div>
+				<div class="column"><h3>collaborations</h3></div>
+			</section>
+
+			<section class="main_content container">
+				<div class="column" ng-controller="musicsolo as solo">
+					<div class="links"  
+						ng-repeat="instance in solo.instances"
+						style="background: url({{instance.imageUrl}}) no-repeat;'">
+						<a class="visual_gallery" ng-href="{{instance.pageUrl}}" >
+							<div class="link_spacer"></div>
+							<div class="link_overlay"> <p>{{instance.title}}</p> </div>
+						</a>
+					</div>
+				</div> <!-- end left solo column -->
+
+				<div class="column" ng-controller="musicVideos as videos">
+					<div class="links"  
+						ng-repeat="instance in videos.instances"
+						style="background: url({{instance.imageUrl}}) no-repeat;'">
+						<a class="youtube" ng-href="{{instance.pageUrl}}" >
+							<div class="link_spacer"></div>
+							<div class="link_overlay"> <p>{{instance.title}}</p> </div>
+						</a>
+					</div>
+				</div> <!-- end middle videos column -->
+
+				<div class="column" ng-controller="musiccollaborations as collaborations">
+					<div class="links"  
+						ng-repeat="instance in collaborations.instances"
+						style="background: url({{instance.imageUrl}}) no-repeat;'">
+						<a class="visual_gallery" ng-href="{{instance.pageUrl}}" >
+							<div class="link_spacer"></div>
+							<div class="link_overlay"> <p> {{instance.title}}</p> </div>
+						</a>
+					</div>
+				</div> <!-- end right collaborations column -->
+			</section> <!-- end content grid -->
+		</div> <!-- end wrapper -->
+	</section> <!-- end music -->
+	
+	
+	<footer id="footer">
+		<div class="wrapper">
+		<p>kyle is an artist, designer, musician, and sound engineer located in the dc/md/nova area</p>
+
+		<div class="socials clearfix">
+			<ul>
+				<li><a href="http://www.soundcloud.com"><img src="images/sc_f.png" id="soundcloud" alt="soundcloud" /></a></li>
+				<li><a href="http://www.bandcamp.com"><img src="images/bc_f.png" id="bandcamp" alt="bandcamp" /></a></li>
+				<li><a href="http://www.youtube.com"><img src="images/yt_f.png" id="youtube" alt="youtube" /></a></li>
+				<li><a href="http://www.twitter.com"><img src="images/tw_f.png" id="twitter" alt="twitter" /></a></li>
+				<li><a href="http://www.instagram.com"><img src="images/ig_f.png" id="instagram" alt="instagram" /></a></li>
+				<li><a href="http://www.email.com"><img src="images/em_f.png" id="email" alt="email" /></a></li>
+			</ul>
+		</div>
+
+		<p id="personal">website by tom whalley</p>
+		</div> <!-- end wrapper -->
+	</footer>
+
+
+	<script>
+		jQuery(".youtube").colorbox({iframe: true, innerWidth: 640, innerHeight: 390});
+	</script>
+</body>
+</html>
