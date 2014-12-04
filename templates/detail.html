@@ -1,0 +1,21 @@
+<div id="detail" ng-controller="detailController">
+	<div class="detail_text" id="detail_head" ng-repeat="text in header">
+		<blockquote>{{text.head}}</blockquote>
+	</div>
+
+	<div id="gallery">
+		<ul id="gallery_img">
+			<li class="thumb" ng-repeat="image in thumbnails">
+				<img ng-src="{{image.thumbnail}}" alt="{{image.description}}" />
+			</li>
+		</ul>
+	</div>
+
+	<slider class="slider" id="prev">&laquo;</slider>
+	<slider class="slider" id="next">&raquo;</slider>
+
+	<div class="detail_text" id="detail_contact">
+		<blockquote>contact kyle</blockquote>
+		<div><a href="http://www.email.com"><img src="images/em.png" alt="email" /></a></div>
+	</div>
+</div>

@@ -1,0 +1,33 @@
+[
+	{
+		"locatedAt": "visual/design/2/",
+		"pageUrl": "http://www.youtube.com/embed/n41_Bn9MsjY?rel=0&amp;wmode=transparent",
+		"imageUrl": "visual/design/2/thumb.jpg",
+		"title": "burn, piano island, burn",
+		"medium": "blood brothers"
+	}, {
+		"locatedAt": "visual/design/1/",
+		"pageUrl": "http://www.youtube.com/embed/o_iPQOSs3b4?rel=0&amp;wmode=transparent",
+		"imageUrl": "visual/design/1/thumb.jpg",
+		"title": "well past the point",
+		"medium": "the saddest landscape"
+	}, {
+		"locatedAt": "visual/design/1/",
+		"pageUrl": "http://www.youtube.com/embed/WneDU-K3Sww?rel=0&amp;wmode=transparent",
+		"imageUrl": "visual/design/1/thumb.jpg",
+		"title": "retreat retreat",
+		"medium": "clams"
+	}, {
+		"locatedAt": "visual/design/1/",
+		"pageUrl": "http://www.youtube.com/embed/JUhXBDpbxiA?rel=0&amp;wmode=transparent",
+		"imageUrl": "visual/design/1/thumb.jpg",
+		"title": "jackson hole, wy",
+        "medium": "human ploop"
+	}, {
+		"locatedAt": "visual/design/2/",
+		"pageUrl": "http://www.youtube.com/embed/NfdjOqoshxI?rel=0&amp;wmode=transparent",
+		"imageUrl": "visual/design/2/thumb.jpg",
+		"title": "planetary",
+		"medium": "rainer maria"
+	}
+]

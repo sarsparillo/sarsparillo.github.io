@@ -1,0 +1,11 @@
+<div class="links"  
+	ng-repeat="instance in instances"
+	style="background: url({{instance.imageUrl}}) no-repeat;'">
+	<a href="" ng-click="updateUrl(instance.locatedAt)" data-action="show">
+		<div class="link_spacer"></div>
+		<div class="link_overlay"></div>
+		<div class="link_text"> 
+			<p class="link_title">{{instance.title}}</p> <p class="link_medium">{{instance.medium}}</p> 
+		</div>
+	</a>
+</div>
