@@ -5,7 +5,7 @@
 
 	<div id="gallery">
 		<ul id="gallery_img">
-			<li class="thumb" ng-repeat="image in thumbnails">
+			<li class="g_thumb" ng-repeat="image in thumbnails">
 				<img ng-src="{{image.thumbnail}}" alt="{{image.description}}" />
 			</li>
 		</ul>
@@ -16,6 +16,6 @@
 
 	<div class="detail_text" id="detail_contact">
 		<blockquote>contact kyle</blockquote>
-		<div><a href="http://www.email.com"><img src="images/em.png" alt="email" /></a></div>
+		<a href="http://www.email.com" class="link email d_link"></a>
 	</div>
 </div>

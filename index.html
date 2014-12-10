@@ -14,15 +14,19 @@
 
 	<link href='http://fonts.googleapis.com/css?family=News+Cycle:400,700' rel='stylesheet' type='text/css'>	
 
-	<link rel="stylesheet" href="css/normalize.css" />
-	<link rel="stylesheet" href="css/style.css" />
+	<link rel="stylesheet" href="css/normalize.css" type='text/css' />
+	<link rel="stylesheet" href="css/style.css" type='text/css' />
 
 
 	<script src="js/jquery-1.11.1.min.js"></script>
-	<script src="js/scroll.js"></script> <!-- jQuery/DOM -->
+	<script src="js/dom.js"></script> <!-- jQuery/DOM -->
 
 	<script src="js/angular.min.js"></script>
-	<script src="js/controllers.js"></script> <!-- angular/content -->
+	<script src="js/app.js"></script> <!-- angular/content -->
+
+	<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
 
 
 	<title>kyle bancroft || portfolio</title>
@@ -37,64 +41,14 @@
 	<header>
 		<div id="menu">
 				<img src="./images/logo.gif" id="logo" alt="logo" class="heads big"/>
-				<a href="#" id="header_click" data-action="to_top"><h1 class="heads big" >portfolio of expressions by kyle bancroft</h1></a>
+				<a href="#" id="header_click" data-action="to_top">
+				<h1 class="heads big" >portfolio of expressions by kyle bancroft</h1></a>
 		</div> <!-- end menu -->
 	</header> <!-- end header and title -->
 	
 	<div id="spacer" style="height: 100%; width: 100%; position: relative; top: 0; background-color: #fff">
-	<a href="#" data-action="to_visual"><div id="movedown"></div></a>
+	<a href="#" data-action="to_music"><div id="movedown"></div></a>
 	</div>
-	
-	<section id="visual_splash" class="section_splash container" ng-class="{away: !isHidden}">
-		<div class="wrapper">
-			<div class="splash_content">
-				<h2>visual imaginings</h2>
-
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer elementum, urna vehicula gravida feugiat, quam massa euismod tortor, vehicula volutpat ipsum ante vitae mauris. Fusce nec gravida sem. Phasellus non feugiat neque. Curabitur ut sagittis ligula. Maecenas feugiat sit amet quam eu suscipit. Aliquam in blandit enim. Morbi suscipit eu nisl vitae pharetra. Vivamus blandit, nisi vitae finibus pulvinar, dui libero congue libero, ut accumsan augue nibh facilisis metus. Etiam scelerisque magna eu feugiat pretium. Sed sodales libero diam, eu egestas urna tempor non. Pellentesque eu ultricies metus, vel aliquet est. Quisque diam nisi, molestie ac lorem quis, congue suscipit velit.</p>
-
-				<p>Curabitur ac sem a arcu fermentum suscipit. Nullam auctor aliquet accumsan. Donec id vehicula ipsum, at volutpat nisi. Curabitur accumsan lectus vel urna lobortis pharetra. Morbi at augue at elit hendrerit placerat in eget nisl. Nam finibus purus non velit interdum, sit amet volutpat turpis convallis. Sed sagittis metus sit amet dapibus dignissim. Vivamus ut leo sed mauris pretium lacinia cursus ut tortor. Sed fermentum urna dolor, ac placerat turpis lobortis sit amet.</p>
-
-			</div> <!-- end splash content -->
-		</div> <!-- end wrapper -->
-	</section> <!-- end visual splash -->
-
-	<a href="#" data-action="to_visual" class="section_a">
-	<section class="section_header clearfix" id="visual_header" ng-class="{away: !isHidden}">
-		<div class="wrapper">
-			<div class="socials clearfix">
-				<p id="visual_text">visual imaginings</p>
-				
-				<ul>
-					<li><a href="http://www.twitter.com"><img src="images/tw.png" id="twitter" alt="twitter" /></a></li>
-					<li><a href="http://www.instagram.com"><img src="images/ig.png" id="instagram" alt="instagram" /></a></li>
-				</ul>
-			</div> <!-- end socials -->
-		</div> <!-- end wrapper -->
-	</section></a> <!-- end visual header -->
-
-	<section id="visual" class="content container clearfix" ng-class="{away: !isHidden}">
-		<div class="wrapper">
-			<section class="content_header">
-				<div class="column"><h3>design</h3></div>
-				<div class="column"><h3>art</h3></div>
-				<div class="column"><h3>architecture</h3></div>
-			</section>
-
-			<section class="main_content container">
-				<div class="column" ng-controller="visualDesign">
-					<content></content>
-				</div> <!-- end left design column -->
-
-				<div class="column" ng-controller="visualArt">
-					<content></content>
-				</div> <!-- end middle art column -->
-
-				<div class="column" ng-controller="visualArchitecture">
-					<content></content>
-				</div> <!-- end right architecture column -->
-			</section> <!-- end content grid -->
-		</div> <!-- end wrapper -->
-	</section> <!-- end visual -->
 	
 	<section id="music_splash" class="section_splash container clearfix" ng-class="{away: !isHidden}">
 		<div class="wrapper">
@@ -111,50 +65,94 @@
 
 	<a href="#" data-action="to_music" class="section_a">
 	<section class="section_header" id="music_header" ng-class="{away: !isHidden}">
-		<div class="wrapper">
-			<div class="socials clearfix">
-				<div class="active" id="music_words">
-					<p id="music_text">audible imaginings</p>
-				</div>
-				<ul>
-					<li><a href="http://www.youtube.com"><img src="images/yt.png" id="youtube" alt="youtube" /></a></li>
-					<li><a href="http://www.soundcloud.com"><img src="images/sc.png" id="soundcloud" alt="soundcloud" /></a></li>
-					<li><a href="http://www.bandcamp.com"><img src="images/bc.png" id="bandcamp" alt="bandcamp" /></a></li>
-				</ul>
-			</div> <!-- end socials -->
-		</div> <!-- end wrapper -->
+		<div class="socials clearfix">
+			<div class="active" id="music_words">
+				<p id="music_text">audible imaginings</p>
+			</div>
+			<ul>
+				<li>
+					<a href="http://www.youtube.com" class="link youtube"></a>
+				</li>
+				<li>
+					<a href="http://www.soundcloud.com" class="link soundcloud"></a>
+				</li>
+				<li>
+					<a href="http://www.bandcamp.com" class="link bandcamp"></a>
+				</li>
+			</ul>
+		</div> <!-- end socials -->
 	</section></a><!-- end music header -->
 
-	<section id="music" class="content container" ng-class="{away: !isHidden}">
+	<section id="music" class="content container">
 		<div class="wrapper">
-			<section class="content_header container">
-				<div class="column"><h3>solo</h3></div>
-				<div class="column"><h3>videos</h3></div>
-				<div class="column"><h3>collaborations</h3></div>
-			</section>
-
-			<section class="main_content container">
-				<div class="column" ng-controller="musicSolo">
-					<content></content>
-				</div> <!-- end left solo column -->
-
-				<div class="column" ng-controller="musicVideos">
-					<content></content>
-				</div> <!-- end middle videos column -->
-
-				<div class="column" ng-controller="musicCollaborations">
-					<content></content>
-				</div> <!-- end right collaborations column -->
-			</section> <!-- end content grid -->
+			<section class="main_content container" ng-controller="musicControl">
+				<music></music>
+				<music></music>
+				<music></music>
+			</section> <!-- end music content -->
 		</div> <!-- end wrapper -->
 	</section> <!-- end music -->
+	
+	<section id="visual_splash" class="section_splash container" ng-class="{away: !isHidden}">
+		<div class="wrapper">
+			<div class="splash_content">
+				<h2>visual imaginings</h2>
+
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer elementum, urna vehicula gravida feugiat, quam massa euismod tortor, vehicula volutpat ipsum ante vitae mauris. Fusce nec gravida sem. Phasellus non feugiat neque. Curabitur ut sagittis ligula. Maecenas feugiat sit amet quam eu suscipit. Aliquam in blandit enim. Morbi suscipit eu nisl vitae pharetra. Vivamus blandit, nisi vitae finibus pulvinar, dui libero congue libero, ut accumsan augue nibh facilisis metus. Etiam scelerisque magna eu feugiat pretium. Sed sodales libero diam, eu egestas urna tempor non. Pellentesque eu ultricies metus, vel aliquet est. Quisque diam nisi, molestie ac lorem quis, congue suscipit velit.</p>
+
+				<p>Curabitur ac sem a arcu fermentum suscipit. Nullam auctor aliquet accumsan. Donec id vehicula ipsum, at volutpat nisi. Curabitur accumsan lectus vel urna lobortis pharetra. Morbi at augue at elit hendrerit placerat in eget nisl. Nam finibus purus non velit interdum, sit amet volutpat turpis convallis. Sed sagittis metus sit amet dapibus dignissim. Vivamus ut leo sed mauris pretium lacinia cursus ut tortor. Sed fermentum urna dolor, ac placerat turpis lobortis sit amet.</p>
+
+			</div> <!-- end splash content -->
+		</div> <!-- end wrapper -->
+	</section> <!-- end visual splash -->
+
+	<a href="#" data-action="to_visual" class="section_a">
+	<section class="section_header clearfix" id="visual_header" ng-class="{away: !isHidden}">
+		<div class="socials clearfix">
+			<p id="visual_text">visual imaginings</p>
+			
+			<ul>
+				<li>
+					<a href="http://www.twitter.com" class="link twitter"></a>
+				</li>
+				<li>
+					<a href="http://www.instagram.com" class="link instagram"></a>
+				</li>
+			</ul>
+		</div> <!-- end socials -->
+	</section></a> <!-- end visual header -->
+
+	<section id="visual" class="content container clearfix" ng-class="{away: !isHidden}">
+		<div class="wrapper">
+
+			<section class="main_content container">
+				<div class="column" ng-controller="designControl">
+					<div class="content_header"><h3>design</h3></div>
+					<div class="content_header spacer"></div>
+					<content></content>
+				</div> <!-- end left design column -->
+
+				<div class="column" ng-controller="artControl">
+					<div class="content_header"><h3>art</h3></div>
+					<div class="content_header spacer"></div>
+					<content></content>
+				</div> <!-- end middle art column -->
+
+				<div class="column" ng-controller="architectureControl">
+					<div class="content_header"><h3>architecture</h3></div>
+					<div class="content_header spacer"></div>
+					<content></content>
+				</div> <!-- end right architecture column -->
+			</section> <!-- end content grid -->
+		</div> <!-- end wrapper -->
+	</section> <!-- end visual -->
 		
 	<footer id="footer" ng-class="{away: !isHidden}">
 		<div class="wrapper">
-		<p>kyle is an artist, designer, musician, and sound engineer located in the dc/md/nova area<br/>
+		<p>kyle is an artist, designer, musician, and sound engineer located in the dc/md/nova area</p>
 
-		contact kyle<br/>
-		<a href="http://www.email.com"><img src="images/em.png" alt="email" /></a></p>
+		<p>contact kyle
+		<a href="http://www.email.com" class="link email d_link"></a></p>
 
 		<div id="personal"><blockquote>website by tom whalley</blockquote></div>
 		</div> <!-- end wrapper -->

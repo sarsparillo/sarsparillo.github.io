@@ -35,6 +35,14 @@ app.directive('detail', function() {
 	};
 });
 
+app.directive('music', function() {
+	return {
+		restrict: 'E',
+		templateUrl: 'templates/music.html',
+		replace: true
+	};
+});
+
 app.directive('slider', function($rootScope) { //to reuse, replace "#gallery_img" with whatever you want
 	return {
 		restrict: 'E',
@@ -88,7 +96,7 @@ app.controller('detailController', ['$scope', '$http', '$rootScope', 'detailUrl'
 	});
 }]);
 
-app.controller('visualDesign', ['$scope', '$http', '$rootScope', 'detailUrl',
+app.controller('designControl', ['$scope', '$http', '$rootScope', 'detailUrl',
 	function ($scope, $http, $rootScope, detailUrl) {
 
 	var url = 'js/json/design.json';
@@ -103,7 +111,7 @@ app.controller('visualDesign', ['$scope', '$http', '$rootScope', 'detailUrl',
 	};
 }]);
 
-app.controller('visualArt', ['$scope', '$http', '$rootScope', 'detailUrl',
+app.controller('artControl', ['$scope', '$http', '$rootScope', 'detailUrl',
 	function ($scope, $http, $rootScope, detailUrl) {
 	"use strict";
 
@@ -119,7 +127,7 @@ app.controller('visualArt', ['$scope', '$http', '$rootScope', 'detailUrl',
 	};
 }]);
 
-app.controller('visualArchitecture', ['$scope', '$http', '$rootScope', 'detailUrl',
+app.controller('architectureControl', ['$scope', '$http', '$rootScope', 'detailUrl',
 	function ($scope, $http, $rootScope, detailUrl) {
 
 	var url = 'js/json/architecture.json';
@@ -134,47 +142,12 @@ app.controller('visualArchitecture', ['$scope', '$http', '$rootScope', 'detailUr
 	};
 }]);
 
-app.controller('musicSolo', ['$scope', '$http', '$rootScope', 'detailUrl',
+app.controller('musicControl', ['$scope', '$http', '$rootScope', 'detailUrl',
 	function ($scope, $http, $rootScope, detailUrl) {
 
-	var url = 'js/json/solo.json';
+	var url = 'js/json/music.json';
 
-	$http.get('js/json/solo.json').then(function(result){
+	$http.get('js/json/music.json').then(function(result){
 		$scope.instances = result.data;
 	});
-
-	$scope.updateUrl = function(newUrl) {
-		detailUrl.changeUrl(newUrl)
-		$rootScope.isHidden = false;
-	};
-}]);
-
-app.controller('musicVideos', ['$scope', '$http', '$rootScope', 'detailUrl',
-	function ($scope, $http, $rootScope, detailUrl) {
-	
-	var url = 'js/json/videos.json';
-
-	$http.get('js/json/videos.json').then(function(result){
-		$scope.instances = result.data;
-	});
-
-	$scope.updateUrl = function(newUrl) {
-		detailUrl.changeUrl(newUrl)
-		$rootScope.isHidden = false;
-	};
-}]);
-
-app.controller('musicCollaborations', ['$scope', '$http', '$rootScope', 'detailUrl',
-	function ($scope, $http, $rootScope, detailUrl) {
-	
-	var url = 'js/json/collaborations.json';
-
-	$http.get('js/json/collaborations.json').then(function(result){
-		$scope.instances = result.data;
-	});
-
-	$scope.updateUrl = function(newUrl) {
-		detailUrl.changeUrl(newUrl)
-		$rootScope.isHidden = false;
-	};
 }]);

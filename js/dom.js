@@ -90,36 +90,36 @@ jQuery(function($)
 		};
 
 		// header resizing
-		showHide($(".heads"), visual_splash, 520);
-		showHide(visual_text, visual_splash, 0);
-		showHide(music_text, music_splash, 0);
+		showHide($(".heads"), music_splash, 520);
+		showHide(music_text, music_splash, -10);
+		showHide(visual_text, visual_splash, 50);
 
 		// keep the detail box in screen no matter what
 		$('#detail_box').css('top', divBase(header) + 'px');
 
 		// more complex header junk
-		if ((offsetAmount(visual_splash) < 618)
-			&& (offsetAmount(visual_splash) > 60))
+		if ((offsetAmount(music_splash) < 618)
+			&& (offsetAmount(music_splash) > 60))
 		{ headScroll(); }
-		else if (offsetAmount(visual_splash) < 60)
+		else if (offsetAmount(music_splash) < 60)
 		{
 			splash.css('top', -512);
 			header.css('top', 0);
 		}
-		else if (offsetAmount(visual_splash) > 618)
+		else if (offsetAmount(music_splash) > 618)
 		{
 			splash.css('top', 0);
 			header.css('top', Math.round(splash.outerHeight())+'px');
 		};
 
-		if (divBase(visual_splash) > 60)
-		{ scrollThis(visual_header, visual_splash); }
-		else
-		{ visual_header.css('top', '60px'); };
-
-		if (divBase(music_splash) > 111)
+		if (divBase(music_splash) > 60)
 		{ scrollThis(music_header, music_splash); }
 		else
-		{ music_header.css('top', '111px'); };
+		{ music_header.css('top', '60px'); };
+
+		if (divBase(visual_splash) > 111)
+		{ scrollThis(visual_header, visual_splash); }
+		else
+		{ visual_header.css('top', '111px'); };
 	});
 }); 
