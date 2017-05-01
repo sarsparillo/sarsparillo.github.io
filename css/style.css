@@ -1,0 +1,148 @@
+
+body { overflow-x: hidden; }
+
+header {
+	height: 70vh; width: 100vw;
+	position: relative;
+	background: #ED7D5B;
+	color: #fff;
+	box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+	overflow: hidden;
+	font-family: Arvo;
+	transition: height 400ms ease;
+	position: fixed;
+}
+
+nav ul {
+	position: absolute;
+	top: 20px;
+	right: 10vw;
+	font: 20px/22px Arvo;
+}
+
+nav ul li {
+	list-style-type: none;
+	display: inline-block;
+	margin-left: 5vw;
+	color: white;
+	cursor: pointer;
+}
+nav ul li:hover {
+	color: #ffe07d;
+}
+
+.whalleybox {
+	position: absolute;
+	text-transform: uppercase;
+	font-size: 60px;
+	font-family: 'Fredoka One';
+	top: 25%;
+	left: 15vw;
+	height: 75%; width: 85vw;
+	z-index: 6;
+}
+
+.whalley {
+	position: absolute;
+	transition: all 200ms ease-in-out;
+	transition-delay: 100ms;
+}
+
+.whalley.one, .whalley.three {
+	top: 0; left: 0;
+	transform-origin: top left;
+ }
+.whalley.two, .whalley.four {
+	transform-origin: bottom left;
+}
+.whalley.one { transform: rotate(60deg);}
+.whalley.two { 
+	transform: rotate(-120deg);
+	left: calc(100% + 30px); top: -30px;
+}
+.whalley.three { transform: rotate(120deg);
+left: calc(100% + 30px); top: 20px; }
+.whalley.four { transform: rotate(-120deg);
+	left: calc(100% + 30px); top: -30px;}
+
+.whalleybox:hover .whalley, header.banner .whalley {
+	transform: rotate(360deg);
+	top: 0; left: 0;
+	transition-delay: 0ms;
+}
+.whalleybox:before {
+	content: 'rulz';
+	position: absolute;
+	color: rgba(255,255,255,0.75);
+	z-index: 5;
+	left: 0%;
+	opacity: 0;
+	transition: 100ms all ease-out;
+	transition-delay: 0ms;
+}
+
+.whalleybox:hover:before, .banner .whalleybox:before {
+	transition-delay: 200ms;
+	left: 300px;
+	opacity: 1;
+}
+.whalleybox:after {
+	content: 'wabsit maker';
+	position: absolute;
+	color: rgba(255,255,255,0.75);
+	z-index: 5;
+	top: 0px;
+	left: 0;
+	opacity: 0;
+	transition: 120ms all ease-out;
+	transition-delay: 0ms;
+}
+.whalleybox:hover:after, .banner .whalleybox:after {
+	transition-delay: 100ms;
+	top: 60px;
+	opacity: 1;
+}
+.whalleybox:hover .hiya, .banner .hiya {
+	animation: hiyapop 800ms ease forwards;
+}
+
+.hiya {
+	font-size: 20px;
+	height: 60px;
+	text-transform: none;
+	text-align: right;
+	position: absolute;
+	bottom: 50px;
+	right: 10vw;
+	opacity: 0;
+	color: white;
+	transition: opacity 200ms ease-in-out;
+}
+header.banner {
+	height: 230px;
+}
+
+
+@keyframes hiyapop {
+	0% { transform: scale(0.8) rotate(0deg); opacity: 0; }
+	85% { transform: scale(0.8) rotate(0deg); opacity: 0; }
+	90% {
+		transform: scale(1.12) rotate(-4deg); opacity: 1;
+	}
+	100% {
+		transform: scale(1) rotate(0deg); opacity: 0.75;
+	}
+}
+
+.companies {
+	z-index: 4;
+	width: 100vw;
+	background: #eee;
+	height: 80vh;
+	box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+	display: flex;
+}
+.content { height: 75vh;}
+footer {
+	height: 20vh; width: 100vh; background: #c05f39;
+}
