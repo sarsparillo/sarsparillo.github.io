@@ -5,10 +5,23 @@ $('#test').click(function(){
 	
 });
 
-$('html, body').scroll(function(){
-	if ($('html, body').scrollTop() > 0 ) {
-		$('header').addClass('banner');
+
+var header = $('header');
+var headPosition = header.offset().top;
+
+$(window).scroll($.throttle(10, function() {
+
+	header.css("top", 0);
+	var edge = $(window).scrollTop() + 100;
+
+	if (headPosition <= edge) {
+		header.addClass("banner");
 	}
-})
+	else {
+		header.removeClass("banner");
+	}
+
+
+}));
 	
 });
