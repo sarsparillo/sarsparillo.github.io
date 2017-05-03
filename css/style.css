@@ -1,23 +1,27 @@
+body { overflow-x: hidden; background: url("https://www.toptal.com/designers/subtlepatterns/patterns/geometry.png");}
 
-body { overflow-x: hidden; }
+/* ============== HEADER ============== */
+/* ============== HEADER ============== */
+/* ============== HEADER ============== */
 
 header {
 	height: 70vh; width: 100vw;
-	position: relative;
+	top: 0;
 	background: #ED7D5B;
-	color: #fff;
+	color: #FFFFFF;
 	box-shadow: 0 2px 6px rgba(0,0,0,0.25);
 	overflow: hidden;
 	font-family: Arvo;
 	transition: height 400ms ease;
 	position: fixed;
+	z-index: 40;
 }
 
 nav ul {
 	position: absolute;
 	top: 20px;
 	right: 10vw;
-	font: 20px/22px Arvo;
+	font: 800 20px/22px Arvo;
 }
 
 nav ul li {
@@ -31,7 +35,7 @@ nav ul li:hover {
 	color: #ffe07d;
 }
 
-.whalleybox {
+.headcontent {
 	position: absolute;
 	text-transform: uppercase;
 	font-size: 60px;
@@ -52,28 +56,24 @@ nav ul li:hover {
 	top: 0; left: 0;
 	transform-origin: top left;
  }
-.whalley.two, .whalley.four {
-	transform-origin: bottom left;
-}
+.whalley.two, .whalley.four { transform-origin: bottom left; }
 .whalley.one { transform: rotate(60deg);}
-.whalley.two { 
-	transform: rotate(-120deg);
-	left: calc(100% + 30px); top: -30px;
-}
+.whalley.two { transform: rotate(-120deg);
+	left: calc(100% + 30px); top: -30px; }
 .whalley.three { transform: rotate(120deg);
-left: calc(100% + 30px); top: 20px; }
+	left: calc(100% + 30px); top: 20px; }
 .whalley.four { transform: rotate(-120deg);
 	left: calc(100% + 30px); top: -30px;}
 
-.whalleybox:hover .whalley, header.banner .whalley {
+.headcontent:hover .whalley, header.banner .whalley {
 	transform: rotate(360deg);
 	top: 0; left: 0;
 	transition-delay: 0ms;
 }
-.whalleybox:before {
+.headcontent:before {
 	content: 'rulz';
 	position: absolute;
-	color: rgba(255,255,255,0.75);
+	color: #FFC3B0;
 	z-index: 5;
 	left: 0%;
 	opacity: 0;
@@ -81,15 +81,15 @@ left: calc(100% + 30px); top: 20px; }
 	transition-delay: 0ms;
 }
 
-.whalleybox:hover:before, .banner .whalleybox:before {
+.headcontent:hover:before, .banner .headcontent:before {
 	transition-delay: 200ms;
 	left: 300px;
 	opacity: 1;
 }
-.whalleybox:after {
+.headcontent:after {
 	content: 'wabsit maker';
 	position: absolute;
-	color: rgba(255,255,255,0.75);
+	color: #FFC3B0;
 	z-index: 5;
 	top: 0px;
 	left: 0;
@@ -97,16 +97,16 @@ left: calc(100% + 30px); top: 20px; }
 	transition: 120ms all ease-out;
 	transition-delay: 0ms;
 }
-.whalleybox:hover:after, .banner .whalleybox:after {
+.headcontent:hover:after, .banner .headcontent:after {
 	transition-delay: 100ms;
 	top: 60px;
 	opacity: 1;
 }
-.whalleybox:hover .hiya, .banner .hiya {
-	animation: hiyapop 800ms ease forwards;
+.headcontent:hover .byline, .banner .byline {
+	animation: byline-popin 800ms ease forwards;
 }
 
-.hiya {
+.byline {
 	font-size: 20px;
 	height: 60px;
 	text-transform: none;
@@ -123,7 +123,7 @@ header.banner {
 }
 
 
-@keyframes hiyapop {
+@keyframes byline-popin {
 	0% { transform: scale(0.8) rotate(0deg); opacity: 0; }
 	85% { transform: scale(0.8) rotate(0deg); opacity: 0; }
 	90% {
@@ -134,15 +134,81 @@ header.banner {
 	}
 }
 
-.companies {
-	z-index: 4;
+
+/* ============== GREETING ============== */
+/* ============== GREETING ============== */
+/* ============== GREETING ============== */
+
+.greeting {
+	margin-top: 75vh;
 	width: 100vw;
-	background: #eee;
-	height: 80vh;
-	box-shadow: 0 2px 6px rgba(0,0,0,0.25);
-	display: flex;
+	padding: 0 25px;
+	text-align: center;
 }
-.content { height: 75vh;}
+
+.greeting h2 {	
+	color: #154C6D;
+	font: 800 2em/2em Arvo;
+}
+
+
+/* ============== WORK ============== */
+/* ============== WORK ============== */
+/* ============== WORK ============== */
+
+.work {
+	z-index: 20;
+	margin-top: 500px;
+	width: 100vw;
+}
+
+.work ul {
+	list-style-type: none;
+	margin: 0; padding: 0;
+}
+
+.work ul li {
+	height: 500px;
+	width: 100%;
+	margin: 5vw;
+	border: 50px solid inherit;
+	border-left: 0;
+	border-right: 0;
+	z-index: 1;
+}
+
+.work li:nth-child(odd) {
+	background: #FFC3B0;
+	border-top-right-radius: 500px;
+	border-bottom-left-radius: 500px;
+	transform: rotate(6deg);
+}
+
+.work li:nth-child(odd) .inner {
+	transform: rotate(-6deg);
+}
+
+.work li:nth-child(even) {
+	background: #ED7D5B;
+	border-top-left-radius: 500px;
+	border-bottom-right-radius: 500px;
+	transform: rotate(-6deg);
+}
+
+.work li:nth-child(even) .inner {
+	transform: rotate(6deg);
+}
+
+/* ============== CONTACT ============== */
+/* ============== CONTACT ============== */
+/* ============== CONTACT ============== */
+
+.contact { height: 75vh; }
+
+/* ============== FOOTER ============== */
+/* ============== FOOTER ============== */
+/* ============== FOOTER ============== */
+
 footer {
 	height: 20vh; width: 100vw; background: #c05f39;
 }

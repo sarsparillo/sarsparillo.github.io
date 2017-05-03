@@ -5,7 +5,7 @@ $('#test').click(function(){
 	
 });
 
-
+/*
 var header = $('header');
 var headPosition = header.offset().top;
 
@@ -23,5 +23,5 @@ $(window).scroll($.throttle(10, function() {
 
 
 }));
-	
+	*/
 });
