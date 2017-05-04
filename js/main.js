@@ -5,6 +5,13 @@ $('#test').click(function(){
 	
 });
 
+$('.website-text').hover(function(){
+	var wabsit = $(this);
+	wabsit.text("website");
+}, function() {
+	var wabsit = $(this);
+	wabsit.text(wabsit.data('original'))
+});
 /*
 var header = $('header');
 var headPosition = header.offset().top;

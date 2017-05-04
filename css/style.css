@@ -1,4 +1,4 @@
-body { overflow-x: hidden; background: url("https://www.toptal.com/designers/subtlepatterns/patterns/geometry.png");}
+body { overflow-x: hidden; background: url("../img/back.png");}
 
 /* ============== HEADER ============== */
 /* ============== HEADER ============== */
@@ -141,12 +141,14 @@ header.banner {
 
 .greeting {
 	margin-top: 75vh;
-	width: 100vw;
-	padding: 0 25px;
-	text-align: center;
 }
 
-.greeting h2 {	
+.plaintext {
+	width: 100vw;
+	text-align: center;
+	padding: 0 25px;
+}
+.plaintext h2 {	
 	color: #154C6D;
 	font: 800 2em/2em Arvo;
 }
@@ -169,7 +171,7 @@ header.banner {
 
 .work ul li {
 	height: 500px;
-	width: 100%;
+	width: 90%;
 	margin: 5vw;
 	border: 50px solid inherit;
 	border-left: 0;
@@ -199,6 +201,15 @@ header.banner {
 	transform: rotate(6deg);
 }
 
+.inner {
+	text-align: center;
+}
+
+.inner img {
+	height: 500px;
+	width: 400px;
+}
+
 /* ============== CONTACT ============== */
 /* ============== CONTACT ============== */
 /* ============== CONTACT ============== */
@@ -210,5 +221,5 @@ header.banner {
 /* ============== FOOTER ============== */
 
 footer {
-	height: 20vh; width: 100vw; background: #c05f39;
+	height: 20vh; width: 100vw; background: #ab3d1a;
 }
