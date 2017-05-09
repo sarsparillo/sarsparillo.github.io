@@ -48,7 +48,7 @@ nav ul li:hover {
 
 .whalley {
 	position: absolute;
-	transition: all 600ms ease-out;
+	transition: all 200ms ease-out;
 	transition-delay: 100ms;
 }
 
