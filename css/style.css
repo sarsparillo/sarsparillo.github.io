@@ -9,7 +9,7 @@
 html, body {
 	width: 100vw;
 	overflow: hidden;
-	background: url('img/terzo.jpg') repeat;
+	background: url('../img/terzo.jpg') repeat;
 	font-family: Arvo;
 }
 
@@ -146,8 +146,7 @@ section {
 	min-height: calc(100vh - var(--banner-height));
 	transition: left 150ms ease-in-out;
 	background: var(--peach);
-	padding: 2rem 4rem;
-	padding-top: calc(var(--banner-height) + 3rem);
+	padding: 3.5rem 4rem 2rem;
 	border-radius: 2rem;
 	transform: rotate(2deg);
 }
@@ -165,9 +164,11 @@ section.active {
 	font: 1rem/1.2rem Arvo;
 	color: var(--blue);
 	max-width: 600px;
+	padding: 1rem;
 }
 .text-inner {
 	transform: rotate(2deg);
+	padding: 2rem 3rem 1rem;
 }
 h3 {
 	color: black;
@@ -179,7 +180,6 @@ h3 {
 	.text-block a:hover,
 	.text-block a:focus,
 	.text-block a:active {
-		color: var(--peach);
 		text-shadow: 0 4px var(--peach);
 		transition: all 50ms ease-out;
 	}
@@ -192,7 +192,14 @@ form {
 	color: black;
 }
 .form-block {
-	display: block;
+	display: flex;
+	align-items: center;
+}
+.form-block label {
+	flex-grow: 1;
+}
+.form-block input {
+	flex-grow: 3;
 }
 input {
 	border: none;
