@@ -36,6 +36,7 @@ $navlinks.click(function(){
 	}
 });
 
+// email
 var form = document.getElementById("email-form");
 			
 async function handleSubmit(event) {

@@ -35,26 +35,38 @@
     </header>
     <section id="content-about">
     	<div class="text-block">
-			<h3>About The Author</h3>
-			<p>Thomas Whalley grew up with stories as his babysitters, spending his afternoons in the back room of his mother’s bookstores and his weekends losing himself in his father’s extensive collection of old and weird science fiction and fantasy novels. It was only a matter of time before he started making his own.</p>
+			<div class="text-inner">
+				<h3>About The Author</h3>
+				<p>Thomas Whalley grew up with stories as his babysitters, spending his afternoons in the back room of his mother’s bookstores and his weekends losing himself in his father’s extensive collection of old and weird science fiction and fantasy novels. It was only a matter of time before he started making his own.</p>
 
-			<p>Proudly queer and a joyous disaster, Thomas’s works are full of rich, diverse characters trying their best to hold everything together, and rarely succeeding. He is as yet unpublished, but this page will be updated as soon as there’s something to update!</p>
-				
-			<p>When he’s not writing endlessly weird and melodramatic fantasy stories, Thomas is often found swinging tools for odd wood projects, keeping his cats and dog from tearing his house apart, or arguing over why he should be allowed to helm a Final Fantasy 8 remake. It neeeeeeds one, okay.</p>
-    	</div>
+				<p>Proudly queer and a joyous disaster, Thomas’s works are full of rich, diverse characters trying their best to hold everything together, and rarely succeeding. He is as yet unpublished, but this page will be updated as soon as there’s something to update!</p>
+					
+				<p>When he’s not writing endlessly weird and melodramatic fantasy stories, Thomas is often found swinging tools for odd wood projects, keeping his cats and dog from tearing his house apart, or arguing over why he should be allowed to helm a Final Fantasy 8 remake. It neeeeeeds one, okay.</p>
+			</div>
+		</div>
     </section>
     <section id="content-contact">
 		<div class="text-block">
-			<h3>Contact me!</h3>
-			<p>I can be found on Twitter as <a href="https://twitter.com/whalleyrulz" target="_blank">@whalleyrulz</a> or you can use the form here.</p>
-			<form id="email-form" action="https://formspree.io/f/mqknoavk" method="POST">
-				<label>Email:</label>
-				<input type="email" name="email" />
-				<label>Message:</label>
-				<input type="text" name="message" />
-				<button id="email-form-button">Submit</button>
-				<p id="form-status"></p>
-			</form>
+			<div class="text-inner">
+				<h3>Contact me!</h3>
+				<p>I can be found on Twitter as <a href="https://twitter.com/whalleyrulz" target="_blank">@whalleyrulz</a> or you can use the form here.</p>
+				<form id="email-form" action="https://formspree.io/f/mqknoavk" method="POST">
+					<div class="form-block">
+						<label for="em-name">Your Name:</label>
+						<input type="text" name="em-name" />
+					</div>
+					<div class="form-block">
+						<label for="em-email">Email:</label>
+						<input type="email" name="em-email" />
+					</div>
+					<div class="form-block">
+						<label for="em-msg">Message:</label>
+						<input type="text" name="em-msg" />
+					</div>
+					<button id="email-form-button" class="btn-orange">Submit</button>
+					<p id="form-status"></p>
+				</form>
+			</div>
 		</div>
     </section>
     <script src="//code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>

@@ -10,6 +10,7 @@ html, body {
 	width: 100vw;
 	overflow: hidden;
 	background: url('img/terzo.jpg') repeat;
+	font-family: Arvo;
 }
 
 header {
@@ -19,7 +20,6 @@ header {
 	color: #fff;
 	box-shadow: 0 2px 6px rgba(0,0,0,0.25);
 	overflow: hidden;
-	font-family: Arvo;
 	transition: height 400ms ease;
 	z-index: 2;
 	position: fixed;
@@ -147,6 +147,9 @@ section {
 	transition: left 150ms ease-in-out;
 	background: var(--peach);
 	padding: 2rem 4rem;
+	padding-top: calc(var(--banner-height) + 3rem);
+	border-radius: 2rem;
+	transform: rotate(2deg);
 }
 section.active {
 	left: 20vw;
@@ -155,9 +158,69 @@ section.active {
 
 .text-block {
 	background: white;
-	border: 2px solid var(--orange);
+	border: 5px solid var(--orange);
 	border-style: indent;
+	border-radius: 1rem;
+	transform: rotate(-4deg);
+	font: 1rem/1.2rem Arvo;
+	color: var(--blue);
+	max-width: 600px;
 }
+.text-inner {
+	transform: rotate(2deg);
+}
+h3 {
+	color: black;
+}
+.text-block a {
+	color: var(--orange);
+	transition: all 150ms ease-in;
+}
+	.text-block a:hover,
+	.text-block a:focus,
+	.text-block a:active {
+		color: var(--peach);
+		text-shadow: 0 4px var(--peach);
+		transition: all 50ms ease-out;
+	}
+
+form {
+	margin: 1rem auto;
+	background: var(--yellow);
+	border-radius: 10px;
+	padding: 1rem;
+	color: black;
+}
+.form-block {
+	display: block;
+}
+input {
+	border: none;
+	padding: 0.25rem 1rem;
+	border-radius: 10px;
+	font: 1rem/1.25rem Arvo;
+}
+button {
+	padding: 0.5rem 1rem;
+	border-radius: 10px;
+	font-family: 'Fredoka One';
+	transition: all 150ms ease-in;
+}
+button:hover,
+button:focus,
+button:active {
+	transition: all 50ms ease-out;
+}
+	.btn-orange {
+		background: var(--orange);
+		color: var(--peach);
+	}
+	.btn-orange:hover,
+	.btn-orange:focus,
+	.btn-orange:active {
+		color: white;
+		box-shadow: 0 0 2px white;
+	}
 
 @media screen and (max-width: 1080px) {
 	.whalleybox {
