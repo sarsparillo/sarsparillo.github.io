@@ -173,6 +173,9 @@ section.active {
 h3 {
 	color: black;
 }
+h3, p {
+	margin-bottom: 1rem;
+}
 .text-block a {
 	color: var(--orange);
 	transition: all 150ms ease-in;
@@ -293,6 +296,17 @@ button:active {
 	}
 	.banner .whalleybox:after {
 		display: none;
+	}
+	section.active {
+		left: 5vw;
+		width: 95vw;
+		padding: 2rem 0;
+	}
+	.text-block {
+		padding: 0;
+	}
+	.text-inner {
+		padding: 2rem 1rem 1rem;
 	}
 }
 @keyframes hiyapop {
