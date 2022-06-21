@@ -142,19 +142,19 @@ header.banner {
 
 section {
 	position: absolute;
-	width: 80vw;
-	left: 100vw;
+	width: 78vw;
+	left: 20vw;
 	top: var(--banner-height);
 	min-height: calc(100vh - var(--banner-height));
-	transition: left 150ms ease-in-out;
+	transition: translate 150ms ease-in-out;
 	background: var(--peach);
 	padding: 3.5rem 4rem 2rem;
 	border-radius: 2rem;
-	transform: rotate(2deg);
+	transform: rotate(-12deg) translate(91vw);
 }
 section.active {
-	left: 20vw;
-	transition-delay: 400ms;
+  transform: rotate(2deg) translate(0);
+	transition-delay: 300ms;
 }
 
 .text-block {
@@ -299,10 +299,11 @@ button:active {
 	.banner .whalleybox:after {
 		display: none;
 	}
-	section.active {
+	section {
 		left: 5vw;
 		width: 95vw;
 		padding: 2rem 0;
+		transform: rotate(-12deg) translate(191vw);
 	}
 	.text-block {
 		padding: 0;
