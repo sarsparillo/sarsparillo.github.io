@@ -83,7 +83,7 @@ nav ul li {
 	transition-delay: 0ms;
 }
 	.whalleybox:before {
-		content: 'rulz';
+		content: 'thomas';
 		position: absolute;
 		color: var(--peach);
 		z-index: 5;
