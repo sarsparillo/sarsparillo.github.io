@@ -16,7 +16,7 @@
     <link href='https://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Fredoka+One' rel='stylesheet' type='text/css'>
 	  <link href="css/mininormal.css" rel="stylesheet" type="text/css" media="all">
-    <link href="css/style.css" rel="stylesheet" type="text/css" media="all">
+    <link href="css/style.css?v=1" rel="stylesheet" type="text/css" media="all">
   </head>
   <body>
     <header>
@@ -42,43 +42,45 @@
         <div class="hiya"><p>They're good books,</p><p>probably the best of best!</p></div>
       </div>
     </header>
-    <section id="content-about">
+    <main>
+    <section id="content-about" class="active">
     	<div class="text-block">
-			<div class="text-inner">
-				<h3>About The Author</h3>
-				<p>Whalley Thomas grew up with stories as babysitters, spending afternoons in the back room of his mother’s bookstores and his weekends losing himself in his father’s extensive collection of old and weird science fiction and fantasy novels. It was only a matter of time before he started making his own.</p>
-
-				<p>Proudly queer and a joyous disaster, Whalley's works are full of rich, diverse characters trying their best to hold everything together, and rarely succeeding. He is as yet unpublished, but this page will be updated as soon as there’s something to update!</p>
-					
-				<p>When he’s not writing endlessly weird and melodramatic fantasy stories, Whalley is often found swinging tools for odd wood projects, keeping his cats and dog from tearing his house apart, or arguing over why he should be allowed to helm a Final Fantasy 8 remake. It neeeeeeds one, okay.</p>
-			</div>
-		</div>
+  			<div class="text-inner">
+  				<h3>About The Author</h3>
+  				<p>Whalley Thomas grew up with stories as babysitters, spending afternoons in the back room of his mother’s bookstores and his weekends losing himself in his father’s extensive collection of old and weird science fiction and fantasy novels. It was only a matter of time before he started making his own.</p>
+  
+  				<p>Proudly queer and a joyous disaster, Whalley's works are full of rich, diverse characters trying their best to hold everything together, and rarely succeeding. He is as yet unpublished, but this page will be updated as soon as there’s something to update!</p>
+  					
+  				<p>When not writing endlessly weird and melodramatic fantasy stories, Whalley is often found swinging tools for odd wood projects, keeping his cat and dog from tearing his house apart, or arguing over why he should be allowed to helm a Final Fantasy 8 remake. It neeeeeeds one, okay.</p>
+  			</div>
+  		</div>
     </section>
     <section id="content-contact">
-		<div class="text-block">
-			<div class="text-inner">
-				<h3>Contact me!</h3>
-				<p>I can be found on Twitter as <a href="https://twitter.com/whalleyrulz" target="_blank">@whalleyrulz</a> or you can use the form here.</p>
-				<form id="email-form" action="https://formspree.io/f/mqknoavk" method="POST">
-					<div class="form-block">
-						<label for="em-name">Your Name:</label>
-						<input type="text" name="em-name" />
-					</div>
-					<div class="form-block">
-						<label for="em-email">Email:</label>
-						<input type="email" name="em-email" />
-					</div>
-					<div class="form-block">
-						<label for="em-msg">Message:</label>
-						<input type="text" name="em-msg" />
-					</div>
-					<button id="email-form-button" class="btn-orange">Submit</button>
-					<p id="form-status"></p>
-				</form>
-			</div>
-		</div>
+  		<div class="text-block">
+  			<div class="text-inner">
+  				<h3>Contact me!</h3>
+  				<p>You can use the form below! I can also be found on tumblr as <a href="https://whalleyrulz.tumblr.com/" target="_blank">whalleyrulz</a> but it is a far more... <em>casual</em> space.</p>
+  				<form id="email-form" action="https://formspree.io/f/mqknoavk" method="POST">
+  					<div class="form-block">
+  						<label for="em-name">Your Name:</label>
+  						<input type="text" name="em-name" />
+  					</div>
+  					<div class="form-block">
+  						<label for="em-email">Email:</label>
+  						<input type="email" name="em-email" />
+  					</div>
+  					<div class="form-block message">
+  						<label for="em-msg">Message:</label>
+  						<textarea name="em-msg" rows="4" cols="40"></textarea>
+  					</div>
+  					<button id="email-form-button" class="btn-orange">Submit</button>
+  					<p id="form-status"></p>
+  				</form>
+  			</div>
+  		</div>
     </section>
-    <script src="//code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+    </main>
+    <script src="//code.jquery.com/jquery-3.6.0.slim.min.js" crossorigin="anonymous"></script>
     <script src="/js/main.js"></script>
   </body>
 </html>

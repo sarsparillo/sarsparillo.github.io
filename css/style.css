@@ -139,21 +139,23 @@ header.banner {
 		top: 0;
 		pointer-events: none;
 	}
-
-section {
-	position: absolute;
+main {
+	position: relative;
 	width: 78vw;
 	left: 20vw;
 	top: var(--banner-height);
-	min-height: calc(100vh - var(--banner-height));
-	transition: transform 150ms ease-in-out;
+	height: 100vh;
 	background: var(--peach);
 	padding: 3.5rem 4rem 2rem;
 	border-radius: 2rem;
+}
+section {
+	position: absolute;
 	transform: rotate(-12deg) translate(91vw);
+	transition: transform 150ms ease-in-out;
 }
 section.active {
-  transform: rotate(2deg) translate(0);
+	transform: rotate(2deg) translate(0);
 	transition-delay: 300ms;
 }
 
@@ -203,15 +205,24 @@ form {
 }
 .form-block label {
 	flex-grow: 1;
+	width: 20%;
 }
 .form-block input {
 	flex-grow: 3;
 }
-input {
+.form-block.message {
+  flex-direction: column;
+  align-items: start;
+}
+input, textarea {
 	border: none;
 	padding: 0.25rem 1rem;
 	border-radius: 10px;
 	font: 1rem/1.25rem Arvo;
+}
+textarea {
+  width: calc(100% - 2rem);
+  resize: none;
 }
 button {
 	padding: 0.5rem 1rem;
@@ -299,7 +310,7 @@ button:active {
 	.banner .whalleybox:after {
 		display: none;
 	}
-	section {
+	main {
 		left: 5vw;
 		width: 95vw;
 		padding: 2rem 0;

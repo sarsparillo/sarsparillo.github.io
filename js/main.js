@@ -18,6 +18,14 @@ $navlinks.on({
 	}
 });
 
+$header.click(function() {
+  if (!$header.hasClass('banner')) {
+    $header.addClass('banner');
+	$('#content-about').addClass('active');
+	$('#about').addClass('active');
+  }
+});
+
 $navlinks.click(function(){
 	const $this = $(this);
 	if ($header.hasClass('banner') && $this.attr('id') == currentPage) {
