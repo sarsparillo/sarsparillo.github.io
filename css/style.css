@@ -1,359 +1,102 @@
-:root {
-	--banner-height: 130px;
-	--orange: #ed7d5b;
-	--yellow: #ffe07d;
-	--peach: #faded6;
-	--blue: #154c6d;
+@font-face {
+    font-family: 'Slabberton';
+    src: local('Slabberton Regular'), local('Slabberton'),
+        url('../fonts/Slabberton.woff2') format('woff2'),
+        url('../fonts/Slabberton.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
 }
+svg[height='0'][aria-hidden='true'] { position: fixed; }
 
-html, body {
-	width: 100vw;
-	max-width: 100vw;
-	max-height: 100vh;
-	overflow: hidden;
-	background: url('../img/terzo.jpg') repeat;
-	font-family: Arvo;
+html {
+	height: 100%;
+	width: 100%;
+	min-height: 100%;
+	background-color: #1b1f20;
+}
+.background {
+	height: 100%;
+	width: 100%;
+	background: linear-gradient(to bottom, #1d1a24, #111112);
+	filter: url(#grain);
+	position: fixed;
+	top: 0; left: 0;
+}
+.background:before {
+	content: '';
+	top: 0; left: 0;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	filter: url(#grain);
+	background: repeating-radial-gradient(
+		circle at 100% 200%,
+		#1b1f2033,
+		#1b1f20 2rem
+	), repeating-radial-gradient(
+		circle at 0% 200%,
+		#58334c44,
+		#1b1f20 2rem
+	);
 }
 
 header {
-	height: 100vh; width: 100vw;
-	position: relative;
-	background: var(--orange);
-	color: #fff;
-	box-shadow: 0 2px 6px rgba(0,0,0,0.25);
-	overflow: hidden;
-	transition: height 400ms ease;
-	z-index: 2;
-	position: fixed;
-}
-
-nav ul {
 	position: absolute;
-	top: 20px;
-	right: 10vw;
-	font: 20px/22px Arvo;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 100%;
+	text-align: center;
+	font-family: 'Slabberton';
 }
 
-nav ul li {
-	list-style-type: none;
-	display: inline-block;
-	margin-left: 5vw;
-	color: white;
-	cursor: pointer;
+h1 {
+	font-size: 8rem;
+	line-height: 1.03;
+	color: #eedcd8;
 }
-	nav ul li.active {
-		color: var(--yellow);
-	}
-
-.whalleybox {
-	position: absolute;
-	text-transform: uppercase;
-	font-size: 60px;
-	font-family: 'Fredoka One';
-	top: 25%;
-	left: 15vw;
-	height: 75%; width: 85vw;
-	z-index: 6;
+h2 {
+	color: #eedcd8;
+	font-size: 3.5rem;
+	margin-top: -0.5rem;
 }
 
-.whalley {
-	position: absolute;
-	transition: all 200ms ease-in-out;
-	transition-delay: 100ms;
+.tallshadow {
+	text-shadow: 
+		0 0 #df6262,
+		0 1px #df6262,
+		0 2px #df6262,
+		0 3px #df6262,
+		0 4px #df6262,
+		0 5px #df6262,
+		0 6px #df6262,
+		0 7px #df6262,
+		0 8px #df6262,
+		0 9px #df6262,
+		0 10px #df6262;
 }
 
-.whalley.one, .whalley.three {
-	top: 0; left: 0;
-	transform-origin: top left;
-}
-.whalley.two, .whalley.four {
-	transform-origin: bottom left;
-}
-.whalley.one { transform: rotate(60deg); }
-.whalley.two { transform: rotate(-120deg);
-	left: calc(100% + 30px); top: -30px; }
-.whalley.three { transform: rotate(120deg);
-	left: calc(100% + 30px); top: 20px; }
-.whalley.four { transform: rotate(-120deg);
-	left: calc(100% + 30px); top: -30px; }
-
-.whalleybox:hover .whalley, header.banner .whalley {
-	transform: rotate(360deg);
-	top: 0; left: 0;
-	transition-delay: 0ms;
-}
-	.whalleybox:before {
-		content: 'thomas';
-		position: absolute;
-		color: var(--peach);
-		z-index: 5;
-		left: 0;
-		opacity: 0;
-		transition: 100ms all ease-out;
-		transition-delay: 0ms;
+@media screen and (max-width: 930px) {
+	h1 {
+		font-size: 6rem;
 	}
-	.whalleybox:hover:before, .banner .whalleybox:before {
-		transition-delay: 200ms;
-		left: 300px;
-		opacity: 1;
+	h2 {
+		font-size: 2rem;
 	}
-	.whalleybox:after {
-		content: 'fantasy author';
-		position: absolute;
-		color: var(--peach);
-		z-index: 5;
-		top: 0;
-		left: 0;
-		opacity: 0;
-		transition: 120ms all ease-out;
-		transition-delay: 0ms;
-	}
-	.whalleybox:hover:after, .banner .whalleybox:after {
-		transition-delay: 100ms;
-		top: 60px;
-		opacity: 1;
-	}
-	.whalleybox:hover .hiya, .banner .hiya {
-		animation: hiyapop 800ms ease forwards;
-	}
-
-.hiya {
-	font-size: 20px;
-	height: 60px;
-	text-transform: none;
-	text-align: right;
-	position: absolute;
-	bottom: 50px;
-	right: 10vw;
-	opacity: 0;
-	color: white;
-	transition: opacity 200ms ease-in-out;
-}
-header.banner {
-	height: var(--banner-height);
-}
-	header.banner .hiya {
-		bottom: -2rem;
-	}
-	header.banner .whalleybox {
-		top: 0;
-		pointer-events: none;
-	}
-main {
-	position: relative;
-	width: 78vw;
-	left: 20vw;
-	top: var(--banner-height);
-	height: 100vh;
-	background: var(--peach);
-	padding: 3.5rem 4rem 2rem;
-	border-radius: 2rem;
-}
-section {
-	position: absolute;
-	transform: rotate(-12deg) translate(91vw);
-	transition: transform 150ms ease-in-out;
-}
-section.active {
-	transform: rotate(2deg) translate(0);
-	transition-delay: 300ms;
 }
 
-.text-block {
-	background: white;
-	border: 5px solid var(--orange);
-	border-style: indent;
-	border-radius: 1rem;
-	transform: rotate(-4deg);
-	font: 1rem/1.2rem Arvo;
-	color: var(--blue);
-	max-width: 600px;
-	padding: 1rem;
-}
-.text-inner {
-	transform: rotate(2deg);
-	padding: 2rem 3rem 1rem;
-}
-h3 {
-	color: black;
-}
-h3, p {
-	margin-bottom: 1rem;
-}
-.text-block a {
-	color: var(--orange);
-	transition: all 150ms ease-in;
-}
-	.text-block a:hover,
-	.text-block a:focus,
-	.text-block a:active {
-		text-shadow: 0 4px var(--peach);
-		transition: all 50ms ease-out;
+@media screen and (max-width: 690px) {
+	h1 {
+		font-size: 3.25rem;
 	}
-
-form {
-	margin: 1rem auto;
-	background: var(--yellow);
-	border-radius: 10px;
-	padding: 1rem;
-	color: black;
-}
-.form-block {
-	display: flex;
-	align-items: center;
-	margin-bottom: 0.5rem;
-}
-.form-block label {
-	flex-grow: 1;
-	width: 20%;
-}
-.form-block input {
-	flex-grow: 3;
-}
-.form-block.message {
-  flex-direction: column;
-  align-items: start;
-}
-input, textarea {
-	border: none;
-	padding: 0.25rem 1rem;
-	border-radius: 10px;
-	font: 1rem/1.25rem Arvo;
-}
-textarea {
-  width: calc(100% - 2rem);
-  resize: none;
-}
-button {
-	padding: 0.5rem 1rem;
-	border-radius: 10px;
-	font-family: 'Fredoka One';
-	transition: all 150ms ease-in;
-}
-button:hover,
-button:focus,
-button:active {
-	transition: all 50ms ease-out;
-}
-	.btn-orange {
-		background: var(--orange);
-		color: var(--peach);
+	h2 {
+		font-size: 1.2rem;
+		margin-top: -0.25rem;
 	}
-	.btn-orange:hover,
-	.btn-orange:focus,
-	.btn-orange:active {
-		color: white;
-		box-shadow: 0 0 2px white;
-	}
-
-@media screen and (max-width: 1080px) {
-	.whalleybox {
-		left: 5vw;
-		width: 95vw;
-	}
-	.hiya {
-		right: 5vw;
-	}
-	nav ul {
-		right: 5vw;
-	}  
-}
-@media (max-width: 890px) {
-	header.banner .hiya {
-		display: none;
-	}
-}
-@media (max-width: 719px) {
-	header.banner {
-		--banner-height: 85px;
-	}
-	section {
-		--banner-height: 85px;
-	}
-	.whalleybox {
-		font-size: 40px;
-	}
-	.banner .whalleybox:before,
-	.whalleybox:hover:before {
-		left: 200px;
-	}
-	.banner .whalleybox:after,
-	.whalleybox:hover:after {
-		top: 36px;
-	}
-	nav ul {
-		top: 6px;
-	}
-}
-@media (max-width: 519px) {
-	.whalleybox {
-		font-size: 25px;
-		left: 10vw;
-		width: 90vw;
-	}
-	.banner .whalleybox {
-		font-size: 40px;
-		left: 5vw;
-		width: 95vw;
-	}
-	.banner nav ul {
-		top: auto;
-		right: auto;
-		bottom: 1rem;
-	}
-	.whalleybox:hover:before {
-		left: 125px;
-	}
-	.whalleybox:hover:after {
-		top: 1.5rem;
-	}
-	.banner .whalleybox:after {
-		display: none;
-	}
-	main {
-		left: 5vw;
-		width: 95vw;
-		padding: 2rem 0;
-		transform: rotate(-12deg) translate(191vw);
-	}
-	.text-block {
-		padding: 0;
-	}
-	.text-inner {
-		padding: 2rem 1rem 1rem;
-	}
-}
-@keyframes hiyapop {
-	0% { transform: scale(0.8) rotate(0deg); opacity: 0; }
-	85% { transform: scale(0.8) rotate(0deg); opacity: 0; }
-	90% { transform: scale(1.12) rotate(-4deg); opacity: 1; }
-	100% { transform: scale(1) rotate(0deg); opacity: 0.75; }
 }
 
-
-/* ============== GREETING ============== */
-/* ============== GREETING ============== */
-/* ============== GREETING ============== */
-
-.greeting {
-margin-top: 75vh;
-}
-
-.plaintext {
-width: 100vw;
-text-align: center;
-padding: 0 25px;
-}
-.plaintext h2 {	
-color: #154C6D;
-font: 800 2em/2em Arvo;
-}
-
-
-/* ============== FOOTER ============== */
-/* ============== FOOTER ============== */
-/* ============== FOOTER ============== */
-
-footer {
-	height: 20vh; width: 100vw; background: #ab3d1a;
+@media screen and (max-width: 375px) {
+	h1 {
+		font-size: 2.5rem;
+	}
 }
